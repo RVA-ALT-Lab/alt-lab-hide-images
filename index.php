@@ -73,3 +73,34 @@ if ( ! function_exists('write_log')) {
 }
 
   //print("<pre>".print_r($a,true)."</pre>");
+
+
+
+ //ACF JSON SAVER
+  add_filter('acf/settings/save_json', 'hide_images_json_save_point');
+   
+  function hide_images_json_save_point( $path ) {
+      
+      // update path
+      $path = plugin_dir_path(__FILE__) . '/acf-json';
+      
+      // return
+      return $path;
+      
+  }
+
+  //ACF JSON LOADER
+  add_filter('acf/settings/load_json', 'hide_images_acf_json_load_point');
+
+  function hide_images_acf_json_load_point( $paths ) {
+      
+      // remove original path (optional)
+      unset($paths[0]);    
+      
+      // append path
+      $path = plugin_dir_path(__FILE__) . '/acf-json';
+      
+      // return
+      return $paths;
+      
+  }
