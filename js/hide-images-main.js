@@ -20,7 +20,8 @@ window.addEventListener('load', (event) => {
     img.classList.remove('hide')
     setTimeout(function () {
         img.classList = 'done';
-        finished.style.display = 'block';
+        finished.style.opacity = '1';
+        finished.style.height = '100%';
       }, (time*1000)); 
     progressBar.style.transition = 'width '+time+'s linear' 
     progressBar.style.width = '100%'
