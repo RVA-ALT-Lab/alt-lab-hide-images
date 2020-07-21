@@ -39,11 +39,11 @@ function hide_images_timer_builder($content){
           // Do something...
 
         $html .= '<div class="timed-image-holder" data-show="' . $time . '">';
-        $html .= '<div class="show-time">You will have' . $time . 'seconds</div>';
+        $html .= '<div class="show-time">You will have ' . $time . ' seconds</div>';
         $html .= '<button class="timer">Start</button>';
         $html .= '<div class="progress-bar"></div>';
         $html .= '<img src="' . $image . '" class="hide">';
-        $html .= '<div class="finished">Time, like all things, passes.</div>';
+        $html .= '<div class="finished"><img class="sunset" src="' . plugin_dir_url(__FILE__) . '/imgs/sunset.png" alt="A setting sun icon."><h2>Time has expired.<h2></div>';
         $html .= '</div>';
 
       // End loop.
